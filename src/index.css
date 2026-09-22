@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8C547;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { scrollbar-width: thin; scrollbar-color: #2A2A2A transparent; }
+*::-webkit-scrollbar { width: 5px; height: 5px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 3px; }
+html { scroll-behavior: smooth; }
+body { background: #050508; color: #FFFFFF; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+.glass-card { background: rgba(255,255,255,0.02); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; transition: all 0.4s ease; }
+.glass-card:hover { border-color: rgba(212,175,55,0.15); box-shadow: 0 8px 40px rgba(212,175,55,0.06); }
+.glass-card-static { background: rgba(255,255,255,0.02); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; }
+.gold-gradient-text { background: linear-gradient(135deg, #F5E6A3 0%, #D4AF37 30%, #E8C547 60%, #D4AF37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.btn-gold { background: linear-gradient(135deg, #D4AF37 0%, #E8C547 50%, #D4AF37 100%); color: #0A0A0A; font-weight: 700; border-radius: 14px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(212,175,55,0.25); }
+.btn-gold:hover { transform: translateY(-1px); box-shadow: 0 8px 40px rgba(212,175,55,0.4); }
+.btn-outline-gold { background: transparent; color: #D4AF37; font-weight: 600; border-radius: 14px; border: 1.5px solid rgba(212,175,55,0.25); transition: all 0.3s; }
+.btn-outline-gold:hover { background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.5); }
+.bg-grid { background-image: linear-gradient(rgba(212,175,55,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.025) 1px, transparent 1px); background-size: 80px 80px; }
+.bg-dots { background-image: radial-gradient(rgba(212,175,55,0.08) 1px, transparent 1px); background-size: 30px 30px; }
+
+/* Review section - clear border separation for each error */
+.markdown-content h2 { font-size: 1.15rem; font-weight: 800; margin-top: 1.75rem; margin-bottom: 1rem; color: #D4AF37; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.markdown-content h3 { font-size: 1rem; font-weight: 600; margin-top: 1.2rem; margin-bottom: 0.6rem; color: #fff; }
+.markdown-content p { margin-bottom: 0.75rem; color: #B0B0B0; line-height: 1.7; font-size: 0.88rem; }
+.markdown-content ul { list-style: none; padding: 0; margin: 0 0 1rem 0; }
+.markdown-content ul li {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid rgba(212,175,55,0.35);
+  border-radius: 12px;
+  padding: 12px 14px 12px 32px;
+  margin-bottom: 12px;
+  position: relative;
+  color: #B0B0B0;
+  line-height: 1.7;
+  font-size: 0.88rem;
+  transition: all 0.2s ease;
+  white-space: pre-line;
+  display: block;
+}
+.markdown-content ul li:hover {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(212,175,55,0.15);
+  transform: translateX(2px);
+}
+.markdown-content ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: #D4AF37;
+  font-weight: bold;
+  font-size: 12px;
+}
+.markdown-content ul li strong { color: #fff; font-weight: 600; }
+.markdown-content ol { padding-left: 1.2rem; margin-bottom: 1rem; }
+.markdown-content ol li {
+  background: rgba(255,255,255,0.015);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  color: #B0B0B0;
+  line-height: 1.6;
+  font-size: 0.88rem;
+}
+.markdown-content table { width: 100%; border-collapse: separate; border-spacing: 0; margin-bottom: 1rem; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+.markdown-content th { text-align: left; padding: 0.65rem 0.85rem; background: rgba(212,175,55,0.06); color: #D4AF37; font-weight: 600; font-size: 0.82rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.markdown-content td { padding: 0.6rem 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #B0B0B0; font-size: 0.82rem; }
+.markdown-content code { background: rgba(212,175,55,0.08); color: #E8C547; padding: 0.15rem 0.45rem; border-radius: 5px; font-family: 'JetBrains Mono', monospace; font-size: 0.82em; border: 1px solid rgba(212,175,55,0.1); }
+.markdown-content pre { background: #08080C; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1rem; overflow-x: auto; }
+.markdown-content pre code { background: none; padding: 0; border: none; color: #C8C8D0; }
+.markdown-content hr { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 1.25rem 0; }
+
+/* Chat messages - short clean */
+.chat-message-assistant { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; }
+.chat-message-assistant p { color: #C8C8C8; line-height: 1.65; font-size: 13px; margin-bottom: 0.5rem; }
+.chat-message-assistant ul { margin: 0.5rem 0; }
+.chat-message-assistant li { background: none !important; border: none !important; padding: 2px 0 2px 16px !important; margin-bottom: 2px !important; font-size: 13px; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+@keyframes float { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delayed { animation: float 7s ease-in-out infinite 1s; }

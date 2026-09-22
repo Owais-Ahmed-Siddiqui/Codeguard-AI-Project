@@ -1,0 +1,20 @@
+{
+  "name": "codeguard-api",
+  "version": "1.0.0",
+  "description": "CodeGuard AI Backend API - Gemini 3.5 Flash • 20/day",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
